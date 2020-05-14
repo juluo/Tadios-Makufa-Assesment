@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  php-fpm:
+    build:
+      context: .docker/php
+      target: base
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - .:/var/www
+  nginx:
+    volumes:
+      - .docker/nginx/conf.d/:/etc/nginx/conf.d
+    depends_on:
+      - php-fpm

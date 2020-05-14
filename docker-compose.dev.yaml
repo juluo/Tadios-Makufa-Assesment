@@ -1,0 +1,4 @@
+version: '3.7'
+services:
+  php-fpm:
+    command: /bin/sh "start.sh" dev

@@ -1,0 +1,17 @@
+###> local folders ###
+/.idea
+/.vscode
+/.DS_Store
+###< local folders ###
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/.docker/logs/nginx/*
+/.docker/logs/postgresql/*
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###

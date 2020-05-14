@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  php-fpm-debug:
+    build:
+      context: .docker/php
+      target: debug
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - .:/var/www
+    command: /bin/sh "start.sh" dev
+  nginx:
+    volumes:
+      - .docker/nginx/conf.d.debug/:/etc/nginx/conf.d
+    depends_on:
+      - php-fpm-debug
